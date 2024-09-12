@@ -1,2 +1,197 @@
 \chapterimage{./Images/head2.jpg} % Chapter heading image
-\chapter{The Introduction}
+\chapter{Time Value of Money }
+\section{Present, Future Value, and Interest Rates}
+\begin{theorem}
+    [Engineering Project Life Cycle]
+    \begin{itemize}
+        \item[]
+        \item Conceptulization
+        \item Detailed Economic Analysis
+        \item Decign
+        \item Build
+        \item Utilize/produce
+        \item Phase out/dispose
+    \end{itemize}
+\end{theorem}
+
+\begin{remark}
+    We invest in projects to gain benefits  (e.g. economic, societial).
+\end{remark}
+
+\begin{theorem}
+    [Tiume Value of Money]
+    \begin{itemize}
+        \item[]
+        \item Bow
+        \item Borrowing costs the borrower
+        \item Lending money creates value for the lender
+    \end{itemize}
+\end{theorem}
+
+\subsection{Present and Future Value}
+\begin{vocabulary}
+    \begin{itemize}
+        \item[]
+        \item $P$ is the present value (Principal)
+        \item $F_N$ is the future value at time $N$
+        \item $i$ is the interest rate
+        \item $I$ is the interest amount
+    \end{itemize}
+\end{vocabulary}
+\begin{theorem}
+    [Future Value]
+    \begin{equation}
+        F = P(1+i)
+    \end{equation}
+
+\end{theorem}
+\subsection{Factors Affecting Interest Rates}
+\begin{itemize}
+    \item Inflation - Higher inflation leads to higher interest rates
+    \item Credit (default) Risk
+          \begin{itemize}
+              \item The risk that the borrower will not pay back the loan
+              \item The higher the default risk, the higher the interest rate
+          \end{itemize}
+    \item Liquidity Risk
+          \begin{itemize}
+              \item Risk associated with bieng able to access the invested funds during the investment period
+              \item The higher the liquidity risk, the higher the interest rate
+          \end{itemize}
+    \item Maturity Risk
+          \begin{itemize}
+              \item The risk that the value of the investment will decrease as a result of changes in interest rates
+              \item The longer the maturity the longer the investment payoff, which also increases credit and liquidity risk, leading to higher interest rates
+          \end{itemize}
+\end{itemize}
+
+\begin{example}
+    [Quick Quiz]
+    \begin{itemize}
+        \item[]
+        \item What would you expect the impact to be on the interest rate associated with a large new mining project under the following scenarios:
+              \begin{itemize}
+                  \item The expected time to complete the project construction increases,
+                  \item The estimated amount of ore available to be mined increases?
+              \end{itemize}
+        \item How would the current value of the project be impacted under the above scenarios?
+    \end{itemize}
+    \begin{itemize}
+        \item Maturing risk increases, time horizon increases, interest rate increases, current value decreases.
+              \begin{itemize}
+                  \item Could also be a liquidity risk because the money is tied up in the project and won't be available for longer.
+                  \item Could also be credit risk because the project may not be completed and the mine may default on the loan.
+                  \item We also expect that as the time horizon and the interest rate increases, the present value of the project decreases.
+              \end{itemize}
+        \item Future value increases, value of the project increases, credit risk decreases. So interest rate decreases.
+    \end{itemize}
+\end{example}
+
+\section{Simple and Compound Interest}
+
+\begin{definition}
+    [Simple Interest]
+    \textit{Simple interest} is calculated on the principal amount only.
+\end{definition}
+
+\begin{theorem}
+    [Simple Interest]
+    \begin{equation}
+        F_N = P(1 + iN)
+    \end{equation}
+\end{theorem}
+
+\begin{definition}
+    [Compound Interest]
+    \textit{Compound interest} is calculated on the principal amount and the interest that has been added to the principal.
+\end{definition}
+
+\begin{theorem}
+    [Compound Interest]
+    \begin{equation}
+        F_N = P(1 + i)^N
+    \end{equation}
+\end{theorem}
+\begin{example}
+    \begin{itemize}
+        \item If you borrow S100 for 3 years at 10\% annual interest (simple interest), how much interest will you pay, and how much will you owe after 3 years?
+    \end{itemize}
+    \begin{align*}
+        I & = P \cdot i \cdot N = 100 \cdot 0.1 \cdot 3 = 30 \\
+        F & = P + I = 100 + 30 = 130
+    \end{align*}
+\end{example}
+
+\begin{example}
+    \begin{itemize}
+        \item If you borrow S100 for 3 years at 10\% annual interest (compound interest), how much interest will you pay, and how much will you owe after 3 years?
+    \end{itemize}
+    \begin{align*}
+        I & = P \cdot (1 + i)^N - P = 100 \cdot (1 + 0.1)^3 - 100 = 100 \cdot 1.331 - 100 = 33.1 \\
+        F & = P + I = 100 + 33.1 = 133.1
+    \end{align*}
+\end{example}
+
+\section{Subperiod Compounding and Effective Interest Rates}
+
+\begin{vocabulary}
+    \begin{itemize}
+        \item[]
+        \item $r$ is the nominal interest rate (usually annual)
+        \item $m$ is the number of compounding periods per year
+        \item $i_s =\frac{r}{m}$ is the interest rate per subperiod
+    \end{itemize}
+\end{vocabulary}
+
+\begin{theorem}
+    [Subperiod Compounding]
+    \begin{equation}
+        F_N = P(1 + \frac{r}{m})^{mN}
+    \end{equation}
+\end{theorem}
+
+\begin{definition}
+    [Effective Interest Rate]
+    The \textit{effective interest rate}, $i_e$, is the interest rate that would be required for one compounding period to achieve the same future value as the nominal interest rate with multiple compounding periods.
+\end{definition}
+\begin{claim}
+    \begin{equation}
+        i_e = (1 + \frac{r}{m})^m -1
+    \end{equation}
+\end{claim}
+
+
+\begin{remark}
+    [When Do We Use Effective Interest Rates vs. Periodic Interest Rates?]
+    \begin{itemize}
+        \item Use the nominal interest rate when calculating the future value of an investment with multiple compounding periods.
+        \item Use the effective interest rate when comparing investments with different compounding periods.
+    \end{itemize}
+\end{remark}
+
+\begin{proof}
+    Say $F = P(1 + \frac{r}{m})^{mN}$ is our subperiod compounding interest rate. We wan to find the effective interest rate that would give us the same future value as $F$.
+    \begin{align}
+        F           & = P(1 + i_e)^N = P(1 + \frac{r}{m})^{mN} \\
+        (1 + i_e)^N & = (1 + \frac{r}{m})^{mN}                 \\
+    \end{align}
+\end{proof}
+
+\begin{corollary}
+    [Continuous Compounding Effective Interest Rate]
+    The limit of the effective interest rate as the number of compounding periods approaches infinity is the continuous compounding effective interest rate.
+    \begin{align}
+        i_e & = \lim_{m \to \infty} (1 + \frac{r}{m})^m - 1 = e^r - 1 \\
+        r   & = \lim_{m \to \infty} ((i_e + 1) - 1)m = \ln(1 + i_e)
+    \end{align}
+\end{corollary}
+
+\section{Problem Set Notes}
+\begin{vocabulary}
+    [Maturity]
+    The time at which the principal and interest are due.
+\end{vocabulary}
+\begin{vocabulary}
+    [Yield rate]
+    The interest rate (as a measure of return on investment) that equates the present value of the cash flows to the initial investment.
+\end{vocabulary}

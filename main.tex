@@ -26,6 +26,8 @@
 \usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
 \usepackage{amsthm}
 
+\usepackage{subcaption}
+
 \usepackage{mathtools}
 
 \usepackage{minted}
@@ -62,7 +64,7 @@
 
 \includeonly{
     LECTURE_1/lecture_1.tex,
-    % LECTURE_2/lecture_2.tex,
+    LECTURE_2/lecture_2.tex,
     % LECTURE_3/lecture_3.tex,
     % LECTURE_4/lecture_4.tex,
     % LECTURE_5/lecture_5.tex,
@@ -130,9 +132,24 @@
 
 \pagestyle{fancy} % Print headers again
 
+% theorem
+% problem
+% example
+% vocabulary
+% definition
+% corollary - statement that follows immediately from a theorem/proof.
+% remark
+% proof
+% lemma - An intermediate theorem used to prove something larger
+% observation - A noteworthy or interesting point
+% proposition - A statement that is not as important as a theorem
+% claim -  A statement presented as true, to be proven within the text.
+% fact A statement known to be true, used without needing a detailed proof
+% assumption - A statement that is taken to be true without proof
+
 \include{LECTURE_1/lecture_1.tex}
 
-% \include{LECTURE_2/lecture_2.tex}
+\include{LECTURE_2/lecture_2.tex}
 
 % \include{LECTURE_3/lecture_3.tex}
 
@@ -141,5 +158,7 @@
 % \include{LECTURE_5/lecture_5.tex}
 
 % \include{LECTURE_6/lecture_6.tex}
+
+
 
 \end{document}
