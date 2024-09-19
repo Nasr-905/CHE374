@@ -151,8 +151,8 @@
 \end{theorem}
 
 \begin{definition}
-    [Effective Interest Rate]
-    The \textit{effective interest rate}, $i_e$, is the interest rate that would be required for one compounding period to achieve the same future value as the nominal interest rate with multiple compounding periods.
+    [Effective Annual Interest Rate]
+    The \textit{effective annual interest rate}, $i_e$, is the interest rate that would be required for one compounding period to achieve the same future value as the nominal interest rate with multiple compounding periods.
 \end{definition}
 \begin{claim}
     \begin{equation}
@@ -177,6 +177,28 @@
     \end{align}
 \end{proof}
 
+\subsubsection{T-bills and Effective Annual Rate}
+
+\begin{definition}
+    [Effective Annual Rate (EAR)]
+    The \textit{effective annual rate} is the interest rate that would be required for one compounding period to achieve the same future value as the nominal interest rate with multiple compounding periods. It is analogous to the effective interest rate.
+\end{definition}
+
+\begin{theorem}
+    [Effective Annual Rate]
+    \begin{align*}
+        EAR & = (1 + \frac{r}{m})^m - 1 \\
+        & = (\frac{F}{P})^{\frac{12}{n}} - 1 \quad \text{where $n$ is the number of months until maturity}
+    \end{align*}
+\end{theorem}
+\begin{proof}
+    $(1 + \frac{r}{m})$ can be thought of the multiplication factor that is applied to the principle, in this case it's $\frac{F}{P}$. $m$ is the number of times compounded, but T-bills aren't compounded, so we use the number of months until maturity and assume that the it is compounded $12/n$ times. Doing this allows us to use the $F = P(1 + \frac{r}{m})^{mN}$ formula, where $mN = \frac{n}{12}$. This is where the future value is 'well-defined' for the T-bill at hand.
+\end{proof}
+
+\begin{remark}
+    Remember, even tho T-bills use simple interest, for the sake of comparison, we use the effective annual rate.
+\end{remark}
+
 \begin{corollary}
     [Continuous Compounding Effective Interest Rate]
     The limit of the effective interest rate as the number of compounding periods approaches infinity is the continuous compounding effective interest rate.
@@ -185,6 +207,25 @@
         r   & = \lim_{m \to \infty} ((i_e + 1) - 1)m = \ln(1 + i_e)
     \end{align}
 \end{corollary}
+
+\begin{definition}
+    [Risk-free Rate]
+    The interest rate on a risk-free investment. This amount just covers the time value of money.
+\end{definition}
+
+\begin{theorem}
+    [Future Interest Rates]
+    \begin{align*}
+        (1 + r_{1 \to x})^{\frac{x}{12}} &= (1 + r_{1 \to k})^{\frac{k}{12}} \cdot (1 + r_{k \to x})^{\frac{x-k}{12}}
+    \end{align*}
+    \begin{itemize}
+        \item $r_{1 \to x}$ is the interest rate from time 1 to time $x$
+        \item $r_{1 \to k}$ is the interest rate from time 1 to time $k$
+        \item $r_{k \to x}$ is the interest rate from time $k$ to time $x$
+    \end{itemize}
+\end{theorem}
+
+
 
 \section{Problem Set Notes}
 \begin{vocabulary}

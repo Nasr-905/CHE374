@@ -282,6 +282,15 @@
     \]
 \end{definition}
 
+\begin{corollary}
+    [Discount Rate Using Continuous Compounding]
+\begin{align}
+    P & = \frac{F}{(1+i)^N} \\
+    & = \frac{F}{(1 + e^r - 1)^N} \\
+    & = \frac{F}{e^{rN}}
+\end{align}
+\end{corollary}
+
 \begin{definition}
     [Present Value of a Perpetuity]
     \begin{align}
@@ -369,22 +378,3 @@
         F & = P(F/P, \frac{r}{m}, mN)
     \end{align}
 \end{theorem}
-% \chapter{Lecture Problems}
-
-% \begin{example}
-%     Consider Annuity that pays $\$10$ per month for 1 year. If interest is $1\%$ per month, compounded monthly. What is the equivalent continuous payment rate? \\
-%     \textbf{Solution:}
-%     \begin{align}
-%         P   & = \$10 (p/A, 1\%, 12) = \$112.56 \\
-%         P_0 & = A\int_0^1 e^{r_{cc}t} dt       \\
-%         P_0 & = A\int_0^1 e^{0.01t} dt         \\
-%         r   & = 11.94\% / \text{year}
-%     \end{align}
-% \end{example}
-
-% \begin{example}
-%     Determine the effective annual rate for an investment that earns $15\%$ per year based on
-%     quarterly compounding for the first $4$ months, then earns $11\%$ per year based on continuous
-%     compounding for another $5$ months.
-% \end{example}
-
