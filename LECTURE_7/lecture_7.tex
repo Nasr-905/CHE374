@@ -1,0 +1,174 @@
+\chapter{Depreciation}
+
+\section{Introduction and Overview}
+
+\begin{proposition}
+    [Depreciation in Cash-Flow Analysis]
+    \textbf{Depreciation does not involve any cash-flows, so it does not directly enter our cash}
+\end{proposition}
+
+\begin{proposition}
+    [Depreciation Terms]
+    \begin{itemize}
+        \item[]
+        \item Basis ($B$): The initial cost of the asset
+        \item Bok Value at time $t$ ($BV_t$): The remaining value of the asset at time $t$
+        \item Depreciable Life ($N$): The number of years the asset is expected to be used
+        \item Salvage Value ($S$): The value of the asset at the end of its life
+        \item Depreciation ($D_t$): The amount of depreciation at time $t$
+    \end{itemize}
+\end{proposition}
+
+\begin{theorem}
+    [Book Value - Basis Relationship]
+    \begin{align}
+        BV_0 & = B                      \\
+        BV_t & = BV_{t-1} - D_t         \\
+             & = B - \sum_{i=1}^{t} D_i
+    \end{align}
+\end{theorem}
+
+\section{Depreciation Methods: Straight-Line and Declining Balance}
+
+
+\begin{definition}
+    [Straight-Line Depreciation]
+    Assumes the annual loss in value is constant over the life of the asset between it's basis and salvage value.
+\end{definition}
+\begin{theorem}
+    [Straight-Line Depreciation]
+    \begin{align}
+        D_t                & = \frac{B-S}{N}                      \\
+        BV_t               & = B - t \frac{B-S}{N}                \\
+        D_1                & = D_2 = \ldots = D_N = \frac{B-S}{N} \\
+        \sum_{t=1}^{K} D_t & = K \frac{B-S}{N}
+    \end{align}
+\end{theorem}
+
+\begin{definition}
+    [Declining Balance Depreciation]
+    Assumes assets lose a fixed percentage of their book value each year.\\
+    This is the most common method required by tax laws.
+\end{definition}
+
+\begin{theorem}
+    [Declining Balance Depreciation]
+    \begin{align}
+        d    & = \text{Depreciation rate}(\%)                \\
+        D_t  & = d \cdot BV_{t-1}                            \\
+        BV_t & = BV_{t-1} - d \cdot BV_{t-1} = (1-d)BV_{t-1} \\
+             & = B(1-d)^t
+    \end{align}
+\end{theorem}
+
+\begin{theorem}
+    [Double Declining Balance Depreciation]
+    \begin{align}
+        d & = 2 \times \text{Straight-Line Depreciation Rate} \\
+          & = \frac{2}{N}                                     \\
+    \end{align}
+\end{theorem}
+
+\section{Depreciation Methods: Sum-of-the-Years'-Digits and Units of Production}
+
+\begin{definition}
+    [Sum-of-the-Years'-Digits Depreciation]
+    Assumes the asset loses value at a rate that is a multiple of the straight-line depreciation rate. It's faster than straight-line during the early years and slower in the later years.
+\end{definition}
+
+\begin{theorem}
+    [Sum-of-the-Years'-Digits Depreciation]
+    \begin{align}
+        SOYD & = 1 + 2 + \cdots + N = \frac{N(N+1)}{2} \\
+        D_t  & = \frac{N-t+1}{SOYD} \cdot (B-S)        \\
+    \end{align}
+    If $N=5$, then $SOYD = 15$.
+    \begin{align}
+        D_1 & = \frac{5-1+1}{15} \cdot (B-S) = \frac{5}{15} \cdot (B-S) \\
+        D_2 & = \frac{4}{15} \cdot (B-S)                                \\
+        D_3 & = \frac{3}{15} \cdot (B-S)                                \\
+    \end{align}
+\end{theorem}
+
+\begin{definition}
+    [Units of Production Depreciation]
+    Assumes the asset loses value based on the number of units produced.
+\end{definition}
+
+\begin{theorem}
+    [Units of Production Depreciation]
+    \begin{align}
+        P_t & = \text{Units made in year }t                                           \\
+        d   & = \text{Depreciation rate per unit}                                     \\
+        D_t & = \frac{\text{Cost}-S}{\text{Total Units}} \times \text{Units Produced} \\
+            & = d \cdot P_t                                                           \\
+    \end{align}
+\end{theorem}
+
+\section{Adjusting for Asset end of Life}
+
+\begin{definition}
+    [Loss on Disposal]
+    Where the actually salvage value is below the book value for that year.\\
+    We add a one-time loss on disposal depreciation when sold to reach the salvage value.
+\end{definition}
+
+% Depreciation table for loss on disposal
+\begin{center}
+    \begin{table}[h!]
+        \centering
+        \renewcommand{\arraystretch}{1.5}
+        \begin{tabular}{|c|c|>{\centering\arraybackslash}p{3cm}|c|}
+            \hline
+            \textbf{Year, $t$} & \textbf{Depreciation for Year $t$}        & \textbf{Sum of Depreciation up to Year $t$} & \textbf{Book Value at the End of Year $t$} \\
+            \hline
+            1                  & $0.4 \times 900 = 360$                    & \$360                                       & $900 - 360 = 540$                          \\
+            \hline
+            2                  & $0.4 \times 540 = 216$                    & \$576                                       & $900 - 576 = 324$                          \\
+            \hline
+            3                  & $0.4 \times 324 = 129.6$                  & \$705.6                                     & $900 - 705.6 = 194.4$                      \\
+            \hline
+            4                  & $0.4 \times 194.4 = 77.76$                & \$783.36                                    & $900 - 783.36 = 116.64$                    \\
+            \hline
+            5                  & \textcolor{red}{\textit{\textbf{116.64}}} & \textcolor{red}{\textit{\textbf{900}}}      & \textcolor{red}{\textit{\textbf{0}}}       \\
+            \hline
+        \end{tabular}
+        \caption{Depreciation Table for Loss on Disposal, a negative depreciation charge is added in the final year to reach the salvage value.}
+    \end{table}
+\end{center}
+
+\begin{definition}
+    [Recaptured Depreciation]
+    Where the actually salvage value is above the book value for that year.\\
+    We add a one-time recaptured depreciation (negative depreciation) when sold to reach the salvage value.
+\end{definition}
+
+\begin{center}
+    \begin{table}[h!]
+        \centering
+        \renewcommand{\arraystretch}{1.5}
+        \begin{tabular}{|c|c|>{\centering\arraybackslash}p{3cm}|c|}
+            \hline
+            \textbf{Year, $t$} & \textbf{Depreciation for Year $t$}         & \textbf{Sum of Depreciation Charges up to Year $t$} & \textbf{Book Value at the End of Year $t$} \\
+            \hline
+            1                  & $0.4 \times 900 = 360$                     & \$360                                               & $900 - 360 = 540$                          \\
+            \hline
+            2                  & $0.4 \times 540 = 216$                     & \$576                                               & $900 - 576 = 324$                          \\
+            \hline
+            3                  & $0.4 \times 324 = 129.6$                   & \$705.6                                             & $900 - 705.6 = 194.4$                      \\
+            \hline
+            4                  & $0.4 \times 194.4 = 77.76$                 & \$783.36                                            & $900 - 783.36 = 116.64$                    \\
+            \hline
+            5                  & \textcolor{red}{\textit{\textbf{-183.36}}} & \textcolor{red}{\textit{\textbf{\$600}}}            & \textcolor{red}{\textit{\textbf{\$300}}}   \\
+            \hline
+        \end{tabular}
+        \caption{Depreciation Table for Recaptured Depreciation, a negative depreciation charge is added in the final year to reach the salvage value.}
+    \end{table}
+\end{center}
+
+\begin{definition}
+    [Salvage Value is Higher than Cost Basis]
+    In this case, we add a one-time recaptured depreciation (negative depreciation) when sold \textbf{plus} a capital gain which is the difference between the salvage value and the cost basis.
+\end{definition}
+
+\subsection{}

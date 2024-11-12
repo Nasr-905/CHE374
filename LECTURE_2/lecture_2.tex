@@ -264,6 +264,32 @@
         F & = 4287.20
     \end{align}
 \end{example}
+\begin{example}
+    You invested \$1100 today, and in 8 years you expect to have \$2000. What is the interest rate? \\
+    \textbf{Solution:}
+    \begin{align}
+        P     & = 1100, F = 2000, N = 8 \\
+        F = P(P/F, i, N)                \\
+        2000  & = 1100(P/F, i, 8)       \\
+        2000  & = 1100(1+i)^8           \\
+        1.818 & = (1+i)^8               \\
+        i = 7.8\%
+    \end{align}
+\end{example}
+
+\begin{example}
+    Say you invest \$100 and expect to be paid 5\% interest annually. What is the annual value? \\
+    \textbf{Solution:}
+    \begin{align}
+        P & = 100, i = 0.05, N = 1 \\
+        A & = P(P/A, i, N)         \\
+        A & = 100(i)               \\
+        A & = 100(0.05)            \\
+        A & = 5
+    \end{align}
+\end{example}
+
+
 \begin{definition}
     [Present Worth Factor]
     \begin{align}
@@ -284,11 +310,11 @@
 
 \begin{corollary}
     [Discount Rate Using Continuous Compounding]
-\begin{align}
-    P & = \frac{F}{(1+i)^N} \\
-    & = \frac{F}{(1 + e^r - 1)^N} \\
-    & = \frac{F}{e^{rN}}
-\end{align}
+    \begin{align}
+        P & = \frac{F}{(1+i)^N}         \\
+          & = \frac{F}{(1 + e^r - 1)^N} \\
+          & = \frac{F}{e^{rN}}
+    \end{align}
 \end{corollary}
 
 \begin{definition}
@@ -362,13 +388,13 @@
     \textbf{Solution:}
     First convert annual interest to daily interest:
     \begin{align}
-        (1 + r)^365&  = 1 + 0.1 \\
-        r          & = 0.02612\% \\
-        F = \$ 1 \times (A/F, 0.02612\%, 60 \times 365) \\
-        & = \$ 1 \times (F/P, 0.02612\%, 60 \times 365)\times (A/F, 0.02612\%, 60 \times 365) \\
-        & = \$ 1.162 M\\
+        (1 + r)^365 & = 1 + 0.1                                                                           \\
+        r           & = 0.02612\%                                                                         \\
+        F = \$ 1 \times (A/F, 0.02612\%, 60 \times 365)                                                   \\
+                    & = \$ 1 \times (F/P, 0.02612\%, 60 \times 365)\times (A/F, 0.02612\%, 60 \times 365) \\
+                    & = \$ 1.162 M                                                                        \\
     \end{align}
-\end{example} 
+\end{example}
 
 \begin{theorem}
     [Compounded Interest Rates]

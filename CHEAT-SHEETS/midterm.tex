@@ -1,0 +1,285 @@
+\chapter{Midterm Cheatsheet}
+
+\subsection{Factors Affecting Interest Rates}
+\begin{itemize}
+    \item Inflation - Higher inflation leads to higher interest rates
+    \item Credit (default) Risk
+          \begin{itemize}
+              \item The risk that the borrower will not pay back the loan
+              \item The higher the default risk, the higher the interest rate
+          \end{itemize}
+    \item Liquidity Risk
+          \begin{itemize}
+              \item Risk associated with bieng able to access the invested funds during the investment period
+              \item The higher the liquidity risk, the higher the interest rate
+          \end{itemize}
+    \item Maturity Risk
+          \begin{itemize}
+              \item The risk that the value of the investment will decrease as a result of changes in interest rates
+              \item The longer the maturity the longer the investment payoff, which also increases credit and liquidity risk, leading to higher interest rates
+          \end{itemize}
+\end{itemize}
+
+\begin{claim}
+    [Effective Interest Rate]
+    \begin{equation}
+        i_e = (1 + \frac{r}{m})^m -1
+    \end{equation}
+\end{claim}
+
+
+\begin{corollary}
+    [Continuous Compounding Effective Interest Rate]
+    The limit of the effective interest rate as the number of compounding periods approaches infinity is the continuous compounding effective interest rate.
+    \begin{align}
+        i_e & = \lim_{m \to \infty} (1 + \frac{r}{m})^m - 1 = e^r - 1 \\
+        r   & = \lim_{m \to \infty} ((i_e + 1) - 1)m = \ln(1 + i_e)
+    \end{align}
+\end{corollary}
+
+\begin{theorem}
+    [Future Interest Rates]
+    \begin{align*}
+        (1 + r_{1 \to x})^{\frac{x}{12}} & = (1 + r_{1 \to k})^{\frac{k}{12}} \cdot (1 + r_{k \to x})^{\frac{x-k}{12}}
+    \end{align*}
+    \begin{itemize}
+        \item $r_{1 \to x}$ is the interest rate from time 1 to time $x$
+        \item $r_{1 \to k}$ is the interest rate from time 1 to time $k$
+        \item $r_{k \to x}$ is the interest rate from time $k$ to time $x$
+    \end{itemize}
+\end{theorem}
+
+\begin{corollary}
+    [Compound Amount Factor]
+    \[
+        (F/P, i, N) = (1+i)^N
+    \]
+\end{corollary}
+
+\begin{definition}
+    [Present Value of an Annuity]
+    The present value of an annuity is equal to a perpetuity starting at the first period minus a perpetuity of the same size starting at the $N+1$ period.
+    \begin{align}
+        \boxed{(P/A, i, N) = \frac{1}{i}( 1 - \frac{1}{(1+i)^{N}})}
+    \end{align}
+    \textit{Note: The second annuity, like all annuities, is also worth $A/i$, but because it starts at the $N+1$ period, we discount it.}
+\end{definition}
+
+
+\begin{definition}
+    [Present Value of an Arithmetic Growth Factor]
+    The arithmetic gradient is the sum of $N$ annuities, each increasing by a constant amount $G$. Remember that arithmetic gradients begin at period 1.
+    \begin{align*}
+        \boxed{(P/G, i, N) = \frac{1}{i^2}\left(1 - \frac{1+iN}{(1 + i)^N}\right)}
+    \end{align*}
+    \textit{Note: To get the total arithmetic gradient present value, add the growth factor to the initial annuity such that: $P = A(P/A, i, N) + G(P/G, i, N)$}
+\end{definition}
+
+\begin{definition}
+    [Present Value of a Geometric Gradient]
+    Looking at the figure \ref{geom-cash-flow}, we can model the present value of a geometric gradient, keeping in mind to discount the cash-flows at the end of each period.
+    \begin{align*}
+        \boxed{(P/G, i, g, N) =\begin{aligned}
+                                                  & \frac{1 - (\frac{1 + g}{1 + i})^N}{i - g}                                     \\
+                                       \text{or } & \frac{(P/A, i^0, N)}{1 + g} \quad \text{where } i^0 = \frac{1 + i}{1 + g} - 1
+                                   \end{aligned}}
+    \end{align*}
+\end{definition}
+
+\begin{definition}
+    [Loan to Value Ratio]
+    The \textbf{loan to value ratio} is the ratio of the principle to the value of the house. The loan to value ratio is calculated as follows:
+    \[
+        \text{LTV} = \frac{\text{Principle}}{\text{House Value}}
+    \]
+\end{definition}
+
+
+\begin{definition}
+    [Amortization Period]
+    The \textbf{amortization period} is the amount of time it takes to pay off the mortgage. The amortization period is typically 25 years.
+\end{definition}
+
+
+\begin{definition}
+    [Mortgage Term]
+    The \textbf{mortgage term} is the amount of time the mortgage rate is fixed. After which the mortgage rate is renegotiated.
+    \\ The mortgage term is typically 5 years.
+\end{definition}
+\begin{definition}
+    [Volatility]
+    Volatility is a statistical measure of the dispersion of returns for a given security or market index.
+    Volatility is the standard deviation of the returns.
+    \begin{equation}
+        \sigma = \sqrt{Var(\overrightarrow{R_i})} = \sqrt{\frac{1}{n-1} \sum_{i=1}^{n} (r_i - \bar{r})^2}
+    \end{equation}
+    where:
+    \begin{itemize}
+        \item $r_i$ is the return at time $i$.
+        \item $\bar{r}$ is the average return.
+        \item $n$ is the number of returns.
+    \end{itemize}
+\end{definition}
+
+\begin{definition}
+    [Covariance]
+    The covariance between two assets is a measure of how the two assets move together. If the covariance is positive, the assets move together, i.e. when one asset increases, the other asset also increases.
+    \begin{equation}
+        Cov(\overrightarrow{R_i},\overrightarrow{R_j}) = \frac{1}{n-1} \sum_{i=1}^{n} (r_{i} - \bar{r_i})(r_{j} - \bar{r_j})
+    \end{equation}
+\end{definition}
+
+
+\begin{definition}
+    Assume we can proportionally invest in $x_i$ amount in the $i^{th}$ asset. We define:
+    \begin{equation}
+        \overrightarrow{X} = \begin{bmatrix}
+            x_1    \\
+            x_2    \\
+            \vdots \\
+            x_n
+        \end{bmatrix}
+    \end{equation}
+    And the covariance matrix of the returns of the $n$ assets is given by:
+    \begin{equation}
+        \Sigma = \begin{bmatrix}
+            \sigma_{11} & \sigma_{12} & \cdots & \sigma_{1n} \\
+            \sigma_{21} & \sigma_{22} & \cdots & \sigma_{2n} \\
+            \vdots      & \vdots      & \ddots & \vdots      \\
+            \sigma_{n1} & \sigma_{n2} & \cdots & \sigma_{nn}
+        \end{bmatrix}
+    \end{equation}
+    Where:
+    \begin{itemize}
+        \item $\sigma_{ij} = \sigma_{ji} = Cov(\overrightarrow{R_i},\overrightarrow{R_j})  $ is the covariance between the $i^{th}$ and $j^{th}$ asset.
+        \item $\sigma_{ii} = Var(\overrightarrow{R_i})$ is the variance of the $i^{th}$ asset.
+    \end{itemize}
+\end{definition}
+
+
+\begin{definition}
+    [Portfolio Expected Return]
+    The expected return of a portfolio is given by:
+    \begin{equation}
+        \mathbb{E}[\overrightarrow{R_p}] = x_1 \mathbb{E}[\overrightarrow{R_1}] + x_2 \mathbb{E}[\overrightarrow{R_2}] + \cdots + x_n \mathbb{E}[\overrightarrow{R_n}] = \sum_{i=1}^{n} x_i \mathbb{E}[\overrightarrow{R_i}]
+    \end{equation}
+    Where:
+    \begin{itemize}
+        \item $\mathbb{E}[\overrightarrow{R_i}]$ is the expected return of the $i^{th}$ asset.
+        \item $\mathbb{E}[\overrightarrow{R_p}]$ is the expected return of the portfolio.
+        \item $\overrightarrow{R_i}$ is the historical return of the $i^{th}$ asset.
+        \item $x_i$ is the proportion of the $i^{th}$ asset in the portfolio.
+    \end{itemize}
+    Intuitively, the expected return of each asset is multiplied by how much of the asset is in the portfolio.
+\end{definition}
+
+
+
+\begin{definition}
+    [Portfolio Volatility]
+    The volatility of a portfolio is given by:
+    \begin{equation}
+        \sigma_p = \sqrt{\overrightarrow{X}^T \times \Sigma \times \overrightarrow{X}}
+    \end{equation}
+\end{definition}
+
+\begin{theorem}
+    [CAPM Assumption]
+    The Capital Asset Pricing Model (CAPM) assumes that investors are rational and risk-averse, in addition, it is just a model with numerous assumptions.\\
+    \textbf{Assumptions:}
+    \begin{itemize}
+        \item Correlation and volatility of and between assets are fixed and constant forever
+        \item All investors aim to maximize economic utility (i.e. make as much money as possible, regardless of any other considerations)
+        \item[] \begin{itemize}
+                  \item Although usually true, we see irrational behavior in the market (e.g. driven by fear)
+              \end{itemize}
+        \item All investors are rational and risk-averse
+        \item All investors have access to the same information at the same time
+        \item Investors have accurate conception of possible returns, i.e. the probability beliefs of investors match the true distribution of returns.
+        \item There are no taxes or transaction costs
+        \item[] \begin{itemize}
+                  \item Often they are negligible, so they are ignored
+              \end{itemize}
+        \item All investors are price takers, i.e. their actions do not influence prices
+        \item Any investor can lend and borrow an unlimited amount at the risk free rate of interest
+        \item All securities can be divided into parcel of any size
+    \end{itemize}
+\end{theorem}
+
+
+\begin{definition}
+    [Sharpe Ratio]
+    To prove that this provides the largest ratio of excess return to risk, we realize that the slope of the tangent line is given by:
+    \begin{align*}
+        m & = \frac{y_2 - y_1}{x_2 - x_1}                \\
+        m & = \frac{\mathbb{E}[R_p] - r_f}{\sigma_p - 0}
+    \end{align*}
+    This is the Sharpe Ratio, we want to maximize it, and it is the slope of the tangent line.\\
+    Higher the slope, higher the sharpe ratio, higher the excess return for the same risk.
+\end{definition}
+
+
+\begin{proposition}
+    [Leveraging]
+    If we invest $50\%$ in the risk-free asset and $50\%$ in the market portfolio, we expect a return that is the average of the two returns, and a volatility that is the average of the two volatilities.\\
+    \begin{equation}
+        \mathbb{E}[R_{p}] = w\cdot \mathbb{E}[R_{m}] + (1-w)\cdot r_f
+    \end{equation}
+
+    \begin{equation}
+        \sigma_{p} = \sqrt{w^2 \sigma_{m}^2 + (1-w)^2 \cdot \sigma_{f}}, \quad \sigma_{f} = 0
+    \end{equation}
+    Where $w$ is the weight of the market portfolio.\\
+    This is called leveraging down, because we are investing in a less risky portfolio than the market portfolio.\\
+\end{proposition}
+\begin{definition}
+    [Systematic Risk]
+    Systematic risk is the risk that is inherent to the entire market or market segment. It is also known as undiversifiable risk or market risk $\beta$.\\
+    E.g. If the economy is in a recession, all stocks will likely decrease in value.\\
+\end{definition}
+
+\begin{definition}
+    [Idiosyncratic Risk]
+    Idiosyncratic risk is the risk that is specific to a particular company or industry. It can be mitigated through diversification.\\
+    E.g. If a company's CEO is caught embezzling money, the company's stock will likely decrease in value.\\
+\end{definition}
+
+
+
+\begin{theorem}
+    [Expected Return of an asset]
+    The expected return of an asset is given by:
+    \begin{equation}
+        \mathbb{E}[R_i] = r_f + \beta_i(\mathbb{E}[R_m] - r_f)
+    \end{equation}
+    Intuitively, it says that the expected return of an asset is the risk-free rate plus the amount that an increase in the market portfolio would increase the return of the asset.\\
+    The systematic risk of the asset is defined as:
+    \begin{equation}
+        \beta_i = \frac{Cov(R_i,R_m)}{Var(R_m)} = \frac{\sigma_{i,m}}{\sigma_{m}^2} = \frac{\rho_{i,m} \sigma_i}{\sigma_{m}}
+    \end{equation}
+    Plotting $\mathbb{E}[R_i]$ vs. $\beta_i$ gives the Security Market Line (SML).\\
+\end{theorem}
+
+\begin{definition}
+    [Expected Value]
+    The expected value of a project is the weighted average of the possible outcomes of the project, where the weights are the probabilities of the outcomes.\\
+    \begin{equation}
+        \mathbb{E}[P] = \sum_{i=1}^{n} P_i \cdot p_i
+    \end{equation}
+    Where:
+    \begin{itemize}
+        \item $P_i$ is the possible outcome of the project.
+        \item $p_i$ is the probability of the outcome.
+    \end{itemize}
+\end{definition}
+
+\begin{definition}
+    [Expected Future Payoff/Return]
+
+    The expected future payoff of the project is given by the expected value of the project, over the present value of the project:
+
+    \begin{equation}
+        \mathbb{E}[R] = \frac{\mathbb{E}[P]}{P_0} -1 = \frac{\sum_{i=1}^{n} P_i \cdot p_i}{P_0} -1
+    \end{equation}
+
+\end{definition}

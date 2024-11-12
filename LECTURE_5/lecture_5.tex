@@ -1,0 +1,113 @@
+\chapter{Comparison Methods 1}
+
+\section{Project Relationships and alternatives}
+
+\begin{definition}
+    [Independent Projects]
+    Expected costs and benefit of each project \underline{do not depend} on whether or not the other is chosen.\\
+    E.g. Painting a room and building a fence are two independent projects.
+\end{definition}
+
+\begin{definition}
+    [Mutually Exclusive Projects]
+    Only one of the possible projects can be chosen.\\
+    E.g. You want to buy one car, so choosing one car means you can't choose the others.
+\end{definition}
+
+\begin{remark}
+    Your budget can be the difference between projects being independent or mutually exclusive. If you can't afford both, then they are mutually exclusive.
+\end{remark}
+
+\begin{definition}
+    [Related but not Mutually Exclusive Projects]
+    Projects that are not independent but not mutually exclusive.\\
+    E.g. Spending on one project may reduce the amount you can invest in another.
+\end{definition}
+
+\begin{theorem}
+    [Converting Related Projects to Mutually Exclusive Projects]
+    If you have many related projects, then you can form mutually exclusive options by choosing a combination of projects in each scenario
+\end{theorem}
+
+\section{Present Worth and Annual Worth}
+
+\begin{remark}
+    Motivation: When evaluating projects, what discount rate do we use to compare cash-flows at different times?
+\end{remark}
+
+\subsection{Present Worth}
+
+\begin{definition}
+    [MARR (Minimum Attractive Rate of Return)]
+    Intuition: If I don't invest in this project, what can I expect to earn from the best alternative? So, not taking a project means, you'll be earning at the MARR.
+\end{definition}
+
+\begin{definition}
+    [Present Worth (PW), or Net Present Value (NPV)]
+    The present value of benefits (positive cash-flows) minus the present value of costs (negative cash-flows), discounted at the MARR.\\
+    Intuition: The amount by which the project beats the best alternative, expressed as today's value
+\end{definition}
+
+\begin{proposition}
+    [Independent Projects Evaluation with PW]
+    \begin{align}
+        PW > 0 & \implies \text{Accept the project} \\
+        PW < 0 & \implies \text{Reject the project}
+    \end{align}
+\end{proposition}
+
+\subsection{Annual Worth}
+
+\begin{definition}
+    [Annual Worth (AW)]
+    Annual Worth is the equivalent annuity of the present worth. It is the constant annual cash-flow that has the same present worth as the project.
+\end{definition}
+
+\begin{proposition}
+    [Independent Projects Evaluation with AW]
+    \begin{align}
+        AW > 0 & \implies \text{Accept the project} \\
+        AW < 0 & \implies \text{Reject the project}
+    \end{align}
+\end{proposition}
+
+\begin{remark}
+    So we solve for an annuity for annual worth, and a present value for present worth.
+\end{remark}
+
+\section{Evaluating Mutually Exclusive Projects (PW and AW)}
+
+\begin{theorem}
+    [Evaluating Mutually Exclusive Projects with PW]
+    \begin{itemize}
+        \item[]
+        \item Define the time horizon
+        \item Develop hte cash flows for each alternative
+        \item Calculate the PW for each alternative using MARR
+        \item Compare the PWs and pick the alternative with the highest PW
+        \item[] \begin{itemize}
+                  \item The best alternative may be none if all PWs are negative
+              \end{itemize}
+    \end{itemize}
+\end{theorem}
+
+\begin{definition}
+    [Time Horizon]
+    The time horizon is the time period over which the project is evaluated. It is the time period over which the cash flows are calculated.\\
+    This is usually the life of the investment.
+\end{definition}
+
+\subsection{Normalizing Time Horizons}
+
+\begin{theorem}
+    [Repeated Lives]
+    When comparing projects with different time horizons, we can assume that at the end of each project's life, the project is repeated (purchased again). This occurs for the Lowest Common Multiple of the time horizons.
+\end{theorem}
+\begin{remark}
+    When using annual worth, we don't need to normalize time horizons.
+\end{remark}
+
+\begin{theorem}
+    [Study Period]
+    We assume we can terminate the project that lasts longer so it matches the shorter project's time horizon, and we adjust the salvage value to account for the remaining life of the longer project.
+\end{theorem}
